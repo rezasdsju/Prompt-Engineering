@@ -1,0 +1,91 @@
+########prompt-style-01#######
+
+Generate a complete, responsive HTML page with a navigation bar for Educational Resource Center. Requirements:
+
+Use <!DOCTYPE html> with lang="en". Include meta charset UTF-8 and viewport.
+
+Load Font Awesome icons via CDN.
+
+Body: light gradient background, clean sans-serif font, reset margin/padding, box-sizing: border-box.
+
+Navigation bar (.menu-container): full-width, blue gradient, white text, subtle shadow.
+
+Menu (.menu): horizontal, evenly spaced items with borders (except last). Each link has an icon + text, hover effect: white background + dark blue text.
+
+Responsive:
+
+≤768px: menu becomes vertical with borders between items
+
+≤480px: reduce text size and padding
+
+Menu items (with Font Awesome icons):
+
+Home (fa-home)
+
+Programming (fa-code)
+
+Tutorials (fa-graduation-cap)
+
+PDF Gallery (fa-file-pdf)
+
+Quiz (fa-question-circle)
+
+Create Result Sheet (fa-chart-bar)
+
+Provide full HTML + CSS in a single file, ready to use.
+
+
+
+
+
+
+
+
+
+#####prompt-style-02######
+Generate a complete responsive HTML navigation bar with the following requirements:
+
+Use <!DOCTYPE html> and set language to English.
+
+Include meta tags for charset UTF-8 and viewport.
+
+Title: Educational Resource Center.
+
+Use Font Awesome (CDN) icons for menu items.
+
+Apply modern CSS styling: reset margin/padding, box-sizing: border-box, and a clean sans-serif font.
+
+Background should be a light gradient for the body.
+
+Navigation bar (.menu-container) should span full width with a blue gradient background, white text, and subtle shadow.
+
+Navigation menu (.menu) should be horizontal, evenly spaced, with borders between items (except the last one).
+
+Each link (a) should have an icon + text, with hover effect: white background and dark blue text.
+
+Make it responsive:
+
+On tablets (≤768px), menu becomes vertical with borders separating items.
+
+On mobile (≤480px), text size and padding shrink slightly.
+
+Menu items should include:
+
+Home (fa-home)
+
+Programming (fa-code)
+
+Tutorials (fa-graduation-cap)
+
+PDF Gallery (fa-file-pdf)
+
+Quiz (fa-question-circle)
+
+Create Result Sheet (fa-chart-bar)
+
+Provide the full HTML + CSS code in one file.
+
+
+
+
+
