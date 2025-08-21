@@ -1,0 +1,254 @@
+Prompt to Create Website
+Write a complete code for responsive website using HTML, CSS, and JavaScript.
+
+Context:
+    I want a website for [উদ্দেশ্য লিখুন].
+
+Structure:
+
+    Possible Structure Elements for a Website
+    1. Navigation / Header
+        o Navbar (with links, dropdowns)
+        o Logo / Branding
+        o Hamburger menu (mobile)
+        o Search bar
+    2. Hero Section / Banner
+        o Big headline / tagline
+        o Background image or video
+        o Call-to-Action buttons (CTA)
+        o Animated elements / sliders
+    3. About Section
+        o Text content describing company / platform / person
+        o Images or illustrations
+    4. Services / Features / Cards
+        o Feature cards (with icon, title, description)
+        o Service list or offerings
+        o Hover effects / interactive components
+    5. Portfolio / Gallery / Projects
+        o Image or video gallery
+        o Filters / categories
+        o Carousel / slider
+    6. Testimonials / Reviews
+        o Customer feedback
+        o Rating stars
+        o Carousel / slider
+    7. Pricing / Plans Section
+        o Pricing tables
+        o Subscription plans
+        o Call-to-action buttons
+    8. FAQ Section
+        o Accordion style expandable questions
+        o Searchable FAQs
+    9. Blog / News Section
+        o List of articles with images, titles, date
+        o Pagination
+    10. Contact Section / Form
+        o Contact form (name, email, message)
+        o Map integration
+        o Social links
+    11. Call-to-Action Section (CTA)
+        o Highlighted section to drive user action
+        o Buttons / links
+    12. Footer
+        o Contact info / address
+        o Social media icons
+        o Newsletter subscription
+        o Quick links / Sitemap
+    13. Other Optional Components
+        o Modal / Popup windows
+        o Back-to-top button
+        o Loading animation / Preloader
+        o Floating action button (FAB)
+        o Chatbot widget
+
+Design:
+
+    Possible Design Styles / Features for a Website
+    1. Background Styles
+        • Gradient background (linear, radial, angular)
+        • Solid color background
+        • Image background (full screen, section-wise)
+        • Video background
+        • Pattern / Texture background
+        • Parallax scrolling background
+    2. Glassmorphism / Frosted Glass Effects
+        • Semi-transparent containers with blur
+        • Transparent cards with shadows
+        • Frosted navbar / header
+    3. Color Themes / Modes
+        • Light mode
+        • Dark mode
+        • Auto switch (light/dark based on system preference)
+        • Custom color palette (brand colors)
+    4. Typography / Text Design
+        • Custom fonts (Google Fonts, system fonts)
+        • Font sizes for headings, body, buttons
+        • Text shadows
+        • Letter spacing / line height adjustments
+        • Gradient text
+        • Animated typing effect / text animations
+    5. Buttons / Interactive Elements
+        • Hover effects (lift, shadow, color change, gradient shift)
+        • Rounded corners (pill, circle, small radius)
+        • Shadow / elevation
+        • Animated icons on hover
+        • Ripple effect
+    6. Cards / Containers
+        • Shadow / elevation (material design)
+        • Rounded corners
+        • Hover lift effect
+        • Glassmorphic cards (blur + transparency)
+        • Gradient or image overlay
+    7. Icons / Graphics
+        • Font Awesome icons
+        • Material icons
+        • SVG graphics / animations
+        • Lottie animations
+        • Animated illustrations
+    8. Animations / Transitions
+        • Fade-in / fade-out
+        • Slide-in / slide-out
+        • Hover animations
+        • Scroll-triggered animations
+        • Page load animations
+    9. Layout / Responsiveness
+        • Flexbox layout
+        • CSS Grid layout
+        • Mobile-first responsive design
+        • Breakpoints for desktop, tablet, mobile
+        • Adaptive font sizes and padding
+    10. Navigation / Header Styles
+        • Sticky / fixed header
+        • Transparent navbar
+        • Hamburger menu for mobile
+        • Animated underline for links
+        • Dropdown / mega menu
+    11. Forms / Input Design
+        • Rounded input fields
+        • Floating labels
+        • Shadow / glow on focus
+        • Animated submit button
+    12. Footer / Miscellaneous
+        • Shadowed footer
+        • Gradient / colored footer
+        • Interactive social icons
+        • Back-to-top button
+    13. Special Effects
+        • Neumorphism / soft UI
+        • Skeuomorphic buttons
+        • Scroll-based parallax
+        • Particle animation background
+        • Video or GIF animation
+
+Functionality:
+
+    Possible Website Functionalities / Features
+    1. Navigation / Menu
+        • Hamburger menu toggle (open/close)
+        • Dropdown / Mega menu
+        • Sticky / fixed navbar
+        • Scroll spy (active link highlight on scroll)
+        • Smooth scroll to sections
+        • Dynamic loading from external file (e.g., fetch API)
+    2. Buttons / Links
+        • Links to other pages
+        • Call-to-action buttons (CTA)
+        • Smooth hover / click animations
+        • Disabled / enabled states
+        • Scroll-to-top button
+    3. Forms / User Input
+        • Contact forms (name, email, message)
+        • Search forms
+        • Login / Signup forms
+        • Form validation (required fields, email check, password check)
+        • File upload / download forms
+        • Inline error messages
+    4. Interactive Components
+        • Modals / popups
+        • Tooltips
+        • Accordions / expandable sections (FAQ style)
+        • Tabs / Tabbed interface
+        • Carousels / Sliders
+        • Image / video lightbox
+    5. Content Loading / API
+        • Fetch / AJAX data loading
+        • Dynamic content update without page reload
+        • JSON / API integration
+        • Infinite scroll / lazy loading
+    6. Animations / Effects
+        • Hover animations (buttons, cards, images)
+        • Scroll-triggered animations
+        • Fade / slide / zoom animations
+        • Page load animations
+        • Lottie or SVG animations
+    7. Media Handling
+        • Image galleries / sliders / carousels
+        • Video embedding / background video
+        • Audio playback
+        • PDF viewer / download button
+    8. User Experience Enhancements
+        • Responsive typography
+        • Mobile-friendly design
+        • Dark/light mode toggle
+        • Theme switching
+        • Smooth scrolling
+        • Back-to-top button
+    9. E-Commerce / Transactions (Optional)
+        • Add-to-cart button
+        • Product filtering / sorting
+        • Checkout form
+        • Payment gateway integration
+    10. Authentication / User Account (Optional)
+        • Login / Signup functionality
+        • Profile page
+        • Password reset / change
+        • OAuth login (Google, Facebook, GitHub)
+    11. Notifications / Feedback
+        • Toast / popup notifications
+        • Error / success messages
+        • Loading spinner / progress bar
+    12. Other Useful Functionalities
+        • Sticky elements / headers
+        • Tabs / collapsible sections
+        • Scroll animations / parallax effect
+        • Real-time updates / WebSockets
+        • Chatbot widget
+        • Offline support / PWA (Progressive Web App)
+
+Output:
+
+    Possible Output Requirements / Options
+    1. File Structure
+        • Full code in one file (HTML + CSS + JS)
+        • Separate files for HTML, CSS, JS
+        • Use external libraries (like Font Awesome, Google Fonts) via CDN
+        • Use local libraries / assets
+    2. Code Quality
+        • Clean and readable code
+        • Proper indentation
+        • Comments explaining sections (HTML, CSS, JS)
+        • Semantic HTML tags (header, main, footer, section, article, nav, etc.)
+        • Efficient CSS and JS (avoid unnecessary duplication)
+    3. Responsiveness
+        • Mobile-first responsive design
+        • Adaptive typography for desktop, tablet, mobile
+        • Flexbox or CSS Grid layout
+        • Media queries for different screen sizes
+    4. Performance / Optimization
+        • Minimize external requests
+        • Lazy load images / assets
+        • Use optimized images / icons
+        • Efficient JS (event delegation, minimal DOM manipulation)
+    5. Accessibility
+        • Alt text for images
+        • Proper ARIA labels if needed
+        • Keyboard navigable (tabindex, focus styles)
+    6. Design Fidelity
+        • Maintain hover effects, shadows, rounded corners
+        • Ensure gradients, glassmorphism, and theme colors are preserved
+        • Smooth animations / transitions
+    7. Output Format Options
+        • Full standalone HTML file (self-contained)
+        • Optionally separate CSS/JS files if project is large
+        • Include external links via CDN or local files
+        • Ready-to-run in browser without additional setup
