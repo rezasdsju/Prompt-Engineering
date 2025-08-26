@@ -101,7 +101,7 @@ const QUESTIONS = [
 Generate new 30 Questions like the above JSON part.The following istructions should be maintained.
 
 ### id:
-* 'id' must be started from 227 *
+* 'id' must be started from 257 *
 
 
 ### Variations: 
@@ -118,7 +118,7 @@ The Question Should contains following varities for "Direct speech to Indirect s
 
 ### Explanation Part:
 *The patterns of the above JSON ,specially, explanation pattern won't be change. mostly try to give the explanation in bengali langugae.* 
-*Mostly Use bengali in the explanation part. Use bengali mostly and mostly in explanation part.*
+*Mostly Use bengali in the explanation part. Use bengali mostly and mostly in explanation part.* ""Explanation বিস্তারিত হতে হবে এবং Explanation এ বাংলা খুব বেশি ব্যবহার করতেই  হবে।""
 *Explanation  must be so much descriptive.*
 
 *The new 30 questions will be created by you must have "correct option- 'D' for more than 10 questions"*
