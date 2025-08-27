@@ -1,0 +1,174 @@
+# Perfected Prompt — Vocabulary MCQ Exam (`vocabulary.html`)
+
+Below is a *clean, complete, unambiguous, and developer-ready* prompt you can give to a frontend developer (or paste into a coding task) to implement the requested single-file responsive MCQ website. It keeps your visual style and UX from the example, enforces the functional requirements, and clarifies implementation details (including how to get a true global ranking table across devices using Firebase).
+
+---
+
+## Summary (one-line)
+
+Create a **single-file** responsive HTML page named `vocabulary.html` (HTML + CSS + JavaScript) that presents short 10-question MCQ exams (randomly sampled from a pool of 70+ vocabulary MCQs). Questions are English⇄Bengali translation, synonyms, and antonyms. The UI should follow the style patterns of the provided example and include user login, persistent profile, global ranking, rating points, and descriptive Bengali explanations for each question.
+
+---
+
+## Required features (must)
+
+### General
+
+* Single file: `vocabulary.html` containing all HTML, CSS, and JavaScript (no build step). External vendor scripts (e.g., Firebase SDK, Font Awesome CDN) are allowed.
+* Responsive design: adapts to mobile, tablet, and desktop; maintain look-and-feel of the supplied sample (colors, chips, sticky header, card layout, radio-style options, action footer, etc.).
+* Accessibility: use semantic HTML, `aria-*` where appropriate, and keyboard navigation for answers.
+
+### Exam behavior
+
+* Each exam consists of **exactly 10** randomly selected questions from a pool of **≥70** MCQs present in the file.
+* Time limit = **10 minutes** (600 seconds). Timer displayed prominently and auto-submits when time elapses.
+* Scoring: Correct = **+1**, Wrong = **−0.25**, Unanswered = **0**.
+* Show result summary with score, counts (correct/wrong/unanswered), and detailed review for each question including Bengali explanation.
+* Explain each answer in **Bengali** (descriptive, a sentence or two). Explanations should appear under each question after submission.
+
+### MCQ structure
+
+* Each MCQ must have: `id` (integer), `q` (question text), `options` (array of 4 strings), `answer` (0..3 index), `explain` (Bengali text). Example JS object format:
+
+```js
+{
+  id: 101,
+  q: 'Choose the Bengali meaning of: "ubiquitous"',
+  options: ['বিরল', 'সর্বত্র বিদ্যমান', 'গোপন', 'অকার্যকর'],
+  answer: 1,
+  explain: 'Ubiquitous মানে “সর্বত্র বিদ্যমান”; স্যামেল ইত্যাদি আজকাল সর্বত্র দেখা যায়।'
+}
+```
+
+### Participants & Identity
+
+* On first visit show a small `username` modal or header input; user must enter a display name (alphanumeric + some safe chars). This value is saved locally so the user remains "logged in" on that browser/device.
+* The app must allow the user to change username in settings.
+* When a user takes an exam, earned points are **added** to their total rating stored in the global ranking database (so multiple exams accumulate). The UI must show the user's current rating beside their name.
+
+### Global Ranking Table (MUST)
+
+* The task requires a **global** ranking table that persists across devices and times (i.e., a proper backend). Use Firebase (Firestore or Realtime Database) for the global scoreboard. If you want to use another backend, document how to configure it.
+* Ranking button: place a `Ranking` button to the right of `New Exam` in the header. Click toggles the ranking panel (open/close). When open, show search box at top to filter/display users by name.
+* Ranking table columns: `Rank`, `Name`, `Total Points`, `Exams Taken`, `Last Seen (UTC ISO)`. Show the current user's rank at the top of the panel in bold (e.g., "Your rank: 230 / 12,345").
+* Sorting: default sort by `Total Points` (desc). Ties broken by `Last Seen` (recent first) or `Exams Taken`.
+* The table must include all participants who have ever submitted an exam.
+* Protect writes: include a simple client-side ruleset + server security recommendations for production (see Security Notes below).
+
+### Local persistence & offline behavior
+
+* On the client, persistent state (username, unfinished exam state, last score) stored in `localStorage` or `sessionStorage` so page reloads keep the user in the same attempt.
+* If user finishes an exam while offline, record the exam locally and sync to Firebase when online.
+
+### UX details & interactions
+
+* Buttons: `Start Exam` (begin), `New Exam` (reset & draw new 10 questions), `Submit Exam` (manual submit). `Submit` disabled unless exam started.
+* When `Start Exam` is clicked and a previous in-progress attempt exists, ask to confirm replacement.
+* After submission: lock options, show per-question reviewer with correct/wrong color cues, and the Bengali explanation under each question.
+* Ranking panel: has a search box and a close button; clicking outside the panel also closes it.
+* Show a live-updating small scoreboard badge with the user's points in the header.
+* Show friendly microcopy for scoring rules and time limit.
+
+### Security & anti-cheat
+
+* Client-side code cannot be fully protected; warn in acceptance criteria that users may be able to inspect/modify answers client-side. For higher-stakes use, move question bank and scoring to a trusted server.
+
+---
+
+## Implementation notes (developer-ready)
+
+### Data model (Firestore suggested)
+
+* Collection `users` documents keyed by auto-id or sanitized username:
+
+  ```json
+  {
+    "displayName": "Rezaul",
+    "totalPoints": 123.75,
+    "examsTaken": 7,
+    "lastSeen": "2025-08-27T16:12:00Z"
+  }
+  ```
+* Collection `submissions` (optional) to store each attempt for audit:
+
+  ```json
+  {
+    "uid": "userDocId",
+    "score": 8.5,
+    "answers": [{"qid":101,"selected":2,"correct":true}],
+    "timestamp": "..."
+  }
+  ```
+
+### Firebase integration
+
+* Include a placeholder for Firebase config. Example in the `vocabulary.html` header:
+
+  ```html
+  <!-- Firebase SDK scripts (replace config below with your project's config) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = { /* REPLACE WITH YOUR FIREBASE CONFIG */ };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  ```
+* Include a note: developer must enable Firestore rules to prevent arbitrary writes (e.g., validate `totalPoints` increments, require `displayName` length limit). Provide an example rule snippet in comments.
+
+### Offline sync strategy (brief)
+
+* Save pending submissions locally under key `pending_submissions`. When `navigator.onLine` becomes true, attempt to push them to Firestore.
+
+### Questions pool
+
+* Place all 70+ questions inside a `const QUESTION_POOL = [...]` array in the JS. Keep IDs stable to enable auditability.
+* Randomly sample 10 with a Fisher–Yates shuffle and `.slice(0, 10)` so everyone gets the same distribution of randomization quality.
+
+### Ranking UI details
+
+* Implement pagination or lazy loading if many users exist, but client should fetch top N (e.g., top 100) by default and allow searching by name with Firestore query.
+* The ranking toggle must visually show the user's own position at top even if outside the current page (by retrieving the user-specific rank separately if necessary).
+
+### Testing / acceptance criteria
+
+* The single `vocabulary.html` file loads and shows a username prompt on first load.
+* Starting an exam draws exactly 10 questions from the pool and begins a 10-minute countdown.
+* Submitting yields a result summary that matches manual scoring rules (including negative fractions for wrong answers).
+* After successful submission, the user's total points in Firebase increase by the exam score.
+* Ranking button toggles a visible table that lists users sorted by `totalPoints` and shows the current user's rank at top.
+* The page keeps the user logged in across reloads.
+
+---
+
+## Deliverables (what to submit)
+
+1. A single file named `vocabulary.html` that implements everything described above.
+2. A short README snippet at the top of the file (as an HTML comment) showing how to configure Firebase (where to paste the config) and Firestore rule suggestions.
+3. Example of 70+ MCQs included in the file (the developer should populate at least 70). Use the schema in **MCQ structure**.
+4. Minimal CSS tweaks to match the supplied color scheme and responsive layout.
+
+---
+
+## Optional (nice to have)
+
+* Show exam history in the user panel (last 5 scores and dates).
+* Add an export CSV for the ranking table for admins.
+* Add animations and micro-interactions (small progress bar, confetti on high score).
+
+---
+
+## Security Notes (important)
+
+* Storing scoring logic and question bank fully on the client makes it easy to cheat. For reliable competitions, move question selection and scoring to a server and use authenticated requests.
+* If using Firestore with client-side writes, at minimum apply rules that limit how often `totalPoints` can be increased and validate the shape of submitted objects.
+
+---
+
+If you want, I can now:
+
+* 1. produce the **complete single-file `vocabulary.html`** with a working Firebase placeholder and 70 example MCQs (client-only version, with global ranking using Firebase), or
+* 2. produce a **client-only** version that stores ranking locally across devices using only browser `localStorage` (but this will NOT be truly global), or
+* 3. produce the file plus a small server snippet (Node.js + Express + JSON store) for a self-hosted global scoreboard.
+
+Which option do you want me to deliver now? (If you want Firebase, I will include the exact script tags and placeholders.)
