@@ -172,3 +172,35 @@ If you want, I can now:
 * 3. produce the file plus a small server snippet (Node.js + Express + JSON store) for a self-hosted global scoreboard.
 
 Which option do you want me to deliver now? (If you want Firebase, I will include the exact script tags and placeholders.)
+
+# vocabulary.html — Prompt & Next Steps
+
+I saved your *Perfected Prompt* and prepared the project plan. Below are the three delivery options I can produce next — pick one and I will generate the requested single-file `vocabulary.html` accordingly.
+
+## Options
+
+1. **Full single-file `vocabulary.html` (Firebase placeholder)**
+
+   * A complete single-file HTML that implements the full client-side UI and logic described in your prompt.
+   * Includes Firebase SDK script tags and a clearly marked `firebaseConfig` placeholder where you paste your project config.
+   * Implements Firestore reads/writes for a global ranking table, pending submission sync, and user profile.
+   * Includes at least 70 sample MCQs in the required JSON structure and Bengali explanations.
+   * Notes and comments explain Firestore rules to enable and how to test offline sync.
+
+2. **Client-only single-file `vocabulary.html` (localStorage ranking)**
+
+   * No backend required. Ranking and user data are stored locally (per-device) in `localStorage`.
+   * Works immediately but will **not** provide a true global ranking across devices.
+   * Includes 70+ MCQs and the full UI/UX.
+
+3. **Single-file + small server snippet (Node.js + Express)**
+
+   * I generate the `vocabulary.html` (client) plus a minimal Node.js + Express server script that stores ranking and submissions in a JSON file (or simple SQLite). This allows a self-hosted global scoreboard.
+   * Includes instructions how to deploy and configure.
+
+---
+
+Choose one of the options (1, 2, or 3). If you pick option 1 (Firebase), I will include the exact script tags and an obvious `/* REPLACE WITH YOUR FIREBASE CONFIG */` comment for where to paste credentials.
+
+If you want any additional tweaks (e.g., theme color changes, number of questions per exam, different scoring), tell me which and I will incorporate them into the generated file.
+
