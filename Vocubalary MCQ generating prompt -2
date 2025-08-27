@@ -1,0 +1,88 @@
+### Prompt for AI to Generate Single-File Responsive Vocabulary MCQ Exam Website
+
+**Task:** Create a fully responsive MCQ practice website named `vocabulary.html` using **HTML + CSS + JavaScript**. This website should be inspired by the provided Narration MCQ exam design but adapted for English-Bengali vocabulary, synonyms, and antonyms practice.
+
+---
+
+**Core Requirements:**
+
+1. **Exam Configuration:**
+
+   * Total MCQs in the main pool: 70+
+   * Each exam selects 10 MCQs randomly for the participant.
+   * Time limit: 10 minutes.
+   * Scoring: Correct = +1, Wrong = -0.25, Unanswered = 0.
+   * Each question has 4 options.
+   * Bengali explanations must be descriptive.
+
+2. **Participant Features:**
+
+   * User enters a **username** at the start. The username persists across sessions.
+   * Display **rank** and **points** beside the "New Exam" button.
+   * Clicking the **Ranking** button shows a global ranking table with all users' scores, ranks, and a search feature.
+   * Global ranking is updated across different devices and times using a backend or Firebase.
+   * User's points accumulate over multiple exams.
+
+3. **Exam Flow & UI:**
+
+   * Show instructions card before exam.
+   * Display timer prominently.
+   * Questions displayed on **one page**, scrollable.
+   * Custom-styled radio buttons for options.
+   * Submit button disabled until exam starts.
+   * After submission, show detailed result with correct, wrong, and unanswered counts.
+   * Each question shows Bengali explanation after submission.
+   * Color coding for correct, wrong, and unanswered answers.
+
+4. **Layout & Styling:**
+
+   * Responsive design for all screen sizes (desktop, tablet, mobile).
+   * Use gradient backgrounds, card layouts, pill labels, and sticky headers as in the provided example.
+   * Sticky action buttons with legends for correct, wrong, unanswered.
+   * Include back buttons linking to home and previous page.
+
+5. **Persistence & Timer:**
+
+   * Use `sessionStorage` to save current exam state (selected questions, answers, time left).
+   * Prevent data loss on accidental reload.
+   * Auto-submit when time ends.
+
+6. **Technical Requirements:**
+
+   * Single HTML file: `vocabulary.html`.
+   * Fully functional **without external dependencies**, except for optional Font Awesome icons.
+   * JavaScript must handle:
+
+     * Random selection of 10 questions
+     * Timer and auto-submit
+     * Answer selection and persistence
+     * Submission scoring and marking
+     * Ranking display and search
+
+7. **Accessibility & UX:**
+
+   * Use `aria-live` for dynamic timer updates.
+   * Label inputs clearly with option letters (A-D).
+   * Provide smooth scrolling and focus states.
+   * Hover and active states for buttons and options.
+
+8. **Additional Features:**
+
+   * Ability to **reset exam**.
+   * Disable inputs after submission.
+   * Show correct/incorrect coloring on answers after submission.
+   * Smooth scroll to bottom for explanation review.
+
+---
+
+**Deliverable:**
+A **single, fully-functional HTML file (`vocabulary.html`)** implementing all the above features with efficient, clean, and maintainable code.
+
+**Notes for AI:**
+
+* Keep the style and UI patterns consistent with the provided Narration MCQ example.
+* Ensure responsive design for mobile, tablet, and desktop.
+* Include at least 70+ sample MCQs with Bengali explanations.
+* Handle all participant and ranking features efficiently.
+* Ensure random selection of 10 questions per exam.
+* Timer countdown with visual cues when time is running out.
